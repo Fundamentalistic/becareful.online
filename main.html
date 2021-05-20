@@ -1,0 +1,266 @@
+<html lang="ru"><head>
+    <meta charset="UTF-8">
+    <link rel="/css/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="container-fluid">
+<header class="row">
+    <div class="logo col-sm-12 col-md-2" onclick="window.location = '/'"><img src="imgs/logo.png" alt="SiteRating" class="logo"></div>
+    <div class="d-none menu col-md-8 d-lg-block">
+        <div class="main-menu row d-flex justify-content-center">
+            <a href="/about">Рефералам</a>
+            <a href="/referals">Рекламодателям</a>
+            <a href="/referals">Владельцам сайтов</a>
+            <a href="/new">Оставить отзыв</a>
+        </div>
+    </div>
+    <a class="uinput d-none d-lg-block col-md-2 " href="/login">Войти</a>
+</header>
+
+<main class="main-border container">
+    <div class="row d-flex justify-content-center my-3"><h1><a href="#" title="Перейти на сайт">pizzahut.ru</a></h1></div>
+    <hr class="divider"/>
+    <div class="row">
+        <style>
+            .site-logo{
+                height: 300px;
+                width: 300px;
+                max-height: 270px!important;
+                max-width: 270px!important;
+            }
+        </style>
+        <div class="col-md-1"></div>
+        <div class="row slider-container container col-md-10 my-3 d-flex justify-content-center">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="imgs/site1.png" alt="First slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="imgs/site2.png" alt="Second slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="imgs/site3.png" alt="Third slide">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+       <div class="col-md-1"></div>
+    </div>
+
+
+    <table class="mt-5 table table-light round-border">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Среднее/Максимальное</th>
+            <th scope="col">Впервые был оценен</th>
+            <th scope="col">Последний раз оценили</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Общая оценка</td>
+            <td>100/100</td>
+            <td>20.03.2020</td>
+            <td>21.05.2021</td>
+        </tr>
+        <tr>
+            <td>Индекс доверия</td>
+            <td>100/100</td>
+            <td>20.03.2020</td>
+            <td>21.05.2021</td>
+        </tr>
+        <tr>
+            <td>Удобство</td>
+            <td>100/100</td>
+            <td>20.03.2020</td>
+            <td>21.05.2021</td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="row">
+        <div class="col-md-5 common-panel">
+
+            <rating v-bind:rating='convenience' description='Общая оценка'></rating>
+            <rating v-bind:rating='trustscore' description='Индекс доверия'></rating>
+            <rating v-bind:rating='convenience' description='Удобство'></rating>
+
+        </div>
+        <div class="col-md-5 common-panel">
+            <div class="messages row mt-4" title="Всего сообщений">
+                <img src="imgs/chat.png" alt="Messages: " style="max-width: 20px; max-height: 20px">
+                <div class="message-count">5</div>
+            </div>
+            <div class="percents">
+                <i class="good-reviews" title="Число хороших отзывов">1</i><i class="divider">/</i>
+                <i class="bad-reviews" title="Число плохих отзывов">0</i>
+            </div>
+        </div>
+    </div>
+    <div class="btn-panel col-5 d-flex justify-content-end">
+        <input type="button" value="Оставить отзыв" onclick="window.location='https://becareful.online/new'">
+    </div>
+    <div class="reviews container">
+        <div class="review">
+            <div class="username">Андрей</div>
+            <div class="rating">
+                <div class="empty">
+                    <i class="rating-star">☆</i>
+                    <i class="rating-star">☆</i>
+                    <i class="rating-star">☆</i>
+                    <i class="rating-star">☆</i>
+                    <i class="rating-star">☆</i>
+                </div>
+                <div class="fill" style="height: 4;"><!--Ширина используется для управления строкой рейтинга-->
+                    <i class="rating-star-fill">★</i>
+                    <i class="rating-star-fill">★</i>
+                    <i class="rating-star-fill">★</i>
+                    <i class="rating-star-fill">★</i>
+                    <i class="rating-star-fill">★</i>
+                </div>
+            </div>
+            <div class="review-title">
+                Lorem ipsum dolor sit amet
+            </div>
+            <div class="review-content">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,
+            </div>
+            <div class="date">2021-05-13 18:34:58</div>
+        </div>
+        <div class="review">
+            <div class="username">Андрей</div>
+            <div class="rating">
+                <div class="empty">
+                    <i class="rating-star">☆</i>
+                    <i class="rating-star">☆</i>
+                    <i class="rating-star">☆</i>
+                    <i class="rating-star">☆</i>
+                    <i class="rating-star">☆</i>
+                </div>
+                <div class="fill" style="height: 2;"><!--Ширина используется для управления строкой рейтинга-->
+                    <i class="rating-star-fill">★</i>
+                    <i class="rating-star-fill">★</i>
+                    <i class="rating-star-fill">★</i>
+                    <i class="rating-star-fill">★</i>
+                    <i class="rating-star-fill">★</i>
+                </div>
+            </div>
+            <div class="review-title">
+                test
+            </div>
+            <div class="review-content">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,
+            </div>
+            <div class="date">2021-05-13 18:34:58</div>
+        </div>
+        <div class="review">
+            <div class="username">Андрей</div>
+            <div class="rating">
+                <div class="empty">
+                    <i class="rating-star">☆</i>
+                    <i class="rating-star">☆</i>
+                    <i class="rating-star">☆</i>
+                    <i class="rating-star">☆</i>
+                    <i class="rating-star">☆</i>
+                </div>
+                <div class="fill" style="height: 5;"><!--Ширина используется для управления строкой рейтинга-->
+                    <i class="rating-star-fill">★</i>
+                    <i class="rating-star-fill">★</i>
+                    <i class="rating-star-fill">★</i>
+                    <i class="rating-star-fill">★</i>
+                    <i class="rating-star-fill">★</i>
+                </div>
+            </div>
+            <div class="review-title">
+                test
+            </div>
+            <div class="review-content">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,
+            </div>
+            <div class="date">2021-05-13 18:34:58</div>
+        </div>
+        <div class="review">
+            <div class="username">Андрей</div>
+            <div class="rating">
+                <div class="empty">
+                    <i class="rating-star">☆</i>
+                    <i class="rating-star">☆</i>
+                    <i class="rating-star">☆</i>
+                    <i class="rating-star">☆</i>
+                    <i class="rating-star">☆</i>
+                </div>
+                <div class="fill" style="height: 5;"><!--Ширина используется для управления строкой рейтинга-->
+                    <i class="rating-star-fill">★</i>
+                    <i class="rating-star-fill">★</i>
+                    <i class="rating-star-fill">★</i>
+                    <i class="rating-star-fill">★</i>
+                    <i class="rating-star-fill">★</i>
+                </div>
+            </div>
+            <div class="review-title">
+                test
+            </div>
+            <div class="review-content">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,
+            </div>
+            <div class="date">2021-05-13 18:34:58</div>
+        </div>
+        <div class="review">
+            <div class="username">Андрей</div>
+            <div class="rating">
+                <div class="empty">
+                    <i class="rating-star">☆</i>
+                    <i class="rating-star">☆</i>
+                    <i class="rating-star">☆</i>
+                    <i class="rating-star">☆</i>
+                    <i class="rating-star">☆</i>
+                </div>
+                <div class="fill" style="height: 5;"><!--Ширина используется для управления строкой рейтинга-->
+                    <i class="rating-star-fill">★</i>
+                    <i class="rating-star-fill">★</i>
+                    <i class="rating-star-fill">★</i>
+                    <i class="rating-star-fill">★</i>
+                    <i class="rating-star-fill">★</i>
+                </div>
+            </div>
+            <div class="review-title">
+                test
+            </div>
+            <div class="review-content">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,
+            </div>
+            <div class="date">2021-05-13 18:34:58</div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+</footer>
+
+
+
+</body></html>
