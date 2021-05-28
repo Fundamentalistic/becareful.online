@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 /* Color Theme Swatches in Hex */
 $Blue-1-hex: #001EBA;
 $Blue-2-hex: #05147D;
@@ -218,7 +219,7 @@ body{
     input[type="button"]{
         width: 180px;
         height: 50px;
-        margin-top: 100px;
+        margin-top: 10px;
         border-radius: 8px;
         background-color: $btn-color-1;
         color: #fff;
@@ -331,4 +332,19 @@ main{
 }
 .round-border{
     border-radius: 5px;
+}
+body{
+    font-family: 'Open Sans', sans-serif!important;
+}
+.alert-container{
+    div{
+        font-size: 19px;
+    }
+    .date{
+        color: #027373;
+        font-size: 21px;
+    }
+}
+.note{
+    font-size: 14px!important;
 }

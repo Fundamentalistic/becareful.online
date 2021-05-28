@@ -21,18 +21,19 @@
     <a class="uinput d-none d-lg-block col-md-2 " href="/login">Войти</a>
 </header>
 
+<style>
+    .site-logo{
+        height: 300px;
+        width: 300px;
+        max-height: 270px!important;
+        max-width: 270px!important;
+    }
+</style>
+
 <main class="main-border container">
-    <div class="row d-flex justify-content-center my-3"><h1><a href="#" title="Перейти на сайт">pizzahut.ru</a></h1></div>
+    <div class="row"><h1 class="col-2" style="padding-left: 2rem !important; padding-top: 1.9rem !important;"><a href="#" title="Перейти на сайт">pizzahut.ru</a></h1><div class="col-9 d-flex justify-content-end"><rating rating='50' description=''></rating></div></div>
     <hr class="divider"/>
     <div class="row">
-        <style>
-            .site-logo{
-                height: 300px;
-                width: 300px;
-                max-height: 270px!important;
-                max-width: 270px!important;
-            }
-        </style>
         <div class="col-md-1"></div>
         <div class="row slider-container container col-md-10 my-3 d-flex justify-content-center">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -65,58 +66,20 @@
        <div class="col-md-1"></div>
     </div>
 
-
-    <table class="mt-5 table table-light round-border">
-        <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Среднее/Максимальное</th>
-            <th scope="col">Впервые был оценен</th>
-            <th scope="col">Последний раз оценили</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>Общая оценка</td>
-            <td>100/100</td>
-            <td>20.03.2020</td>
-            <td>21.05.2021</td>
-        </tr>
-        <tr>
-            <td>Индекс доверия</td>
-            <td>100/100</td>
-            <td>20.03.2020</td>
-            <td>21.05.2021</td>
-        </tr>
-        <tr>
-            <td>Удобство</td>
-            <td>100/100</td>
-            <td>20.03.2020</td>
-            <td>21.05.2021</td>
-        </tr>
-        </tbody>
-    </table>
-    <div class="row">
-        <div class="col-md-5 common-panel">
-
-            <rating v-bind:rating='convenience' description='Общая оценка'></rating>
-            <rating v-bind:rating='trustscore' description='Индекс доверия'></rating>
-            <rating v-bind:rating='convenience' description='Удобство'></rating>
-
+    <div class="container alert-container">
+        <hr class="divider"/>
+        <div class="row col-12 d-flex justify-content-center">Мы впервые увидели <a class="mx-1" href="#">pizzahut.ru</a> в поисковике: <span class="mx-2 date">20.05.2021</span></div>
+        <hr class="divider"/>
+        <div class="row col-12 d-flex justify-content-center">Об этом сайте были найдены отзывы на других ресурсах <span class="mx-2 date">читать</span></div>
+        <div class="row col-12 d-flex justify-content-center"><div class="note col-md-8">Обратите внимание: если вы видите, что отзывы у нас и на оригинальных отзовиках не совпадают, это может означать что владельцы отзовиков позволяют изменять отзывы после публикации.</div></div>
+        <hr class="divider"/>
+        <div class="row col-12 d-flex justify-content-center">Если у вас есть что сказать, оставьте свой отзыв</div>
+        <div class="btn-panel col-12 d-flex justify-content-center">
+            <input type="button" value="Оставить отзыв" onclick="window.location='https://becareful.online/new'">
         </div>
-        <div class="col-md-5 common-panel">
-            <div class="messages row mt-4" title="Всего сообщений">
-                <img src="imgs/chat.png" alt="Messages: " style="max-width: 20px; max-height: 20px">
-                <div class="message-count">5</div>
-            </div>
-            <div class="percents">
-                <i class="good-reviews" title="Число хороших отзывов">1</i><i class="divider">/</i>
-                <i class="bad-reviews" title="Число плохих отзывов">0</i>
-            </div>
-        </div>
-    </div>
-    <div class="btn-panel col-5 d-flex justify-content-end">
-        <input type="button" value="Оставить отзыв" onclick="window.location='https://becareful.online/new'">
+        <hr class="divider"/>
+        <div class="row col-12 d-flex justify-content-center">Так же на нашем сайте были оставлены отзывы о сайте <a class="mx-1" href="#">pizzahut.ru</a></div>
+        <hr class="divider"/>
     </div>
     <div class="reviews container">
         <div class="review">
@@ -253,6 +216,7 @@
 </main>
 
 <footer>
+    <script type="module" src="js/components.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
