@@ -42,9 +42,25 @@ Vue.component('rating', {
 
 var main = new Vue({
 	el: 'main',
-	data:{
-
+	mounted() {
+		let params = window.location.search;
+		params = new URLSearchParams(params);
+		this.site_id = params.get('site_id');
+		console.log(this.site_id);
 	},
-	methods: {}
+	data:{
+		site_id: 0
+	},
+	methods: {
+		openShortReviewForm: () => {
+			console.log('shortReviewForm is open');
+			let form = document.querySelector('#shortReviewForm');
+			form.style.display = "block";
+		},
+		hideShortReviewForm: () => {
+			let form = document.querySelector('#shortReviewForm');
+			form.style.display = "none";
+		}
+	}
 
 })

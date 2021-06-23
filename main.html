@@ -75,7 +75,7 @@
         <hr class="divider"/>
         <div class="row col-12 d-flex justify-content-center">Если у вас есть что сказать, оставьте свой отзыв</div>
         <div class="btn-panel col-12 d-flex justify-content-center">
-            <input type="button" value="Оставить отзыв" onclick="window.location='https://becareful.online/new'">
+            <input type="button" value="Оставить отзыв" v-on:click="openShortReviewForm">
         </div>
         <hr class="divider"/>
         <div class="row col-12 d-flex justify-content-center">Так же на нашем сайте были оставлены отзывы о сайте <a class="mx-1" href="#">pizzahut.ru</a></div>
@@ -213,6 +213,26 @@
             <div class="date">2021-05-13 18:34:58</div>
         </div>
     </div>
+    <form method="POST" :action="'/new/review?site_id='+site_id" id="shortReviewForm">
+        <div class="background" v-on:click="hideShortReviewForm"></div>
+        <div class="reviewPane" class="container">
+            <div class="row d-flex justify-content-center mt-5">
+                <h3>Оставить отзыв</h3>
+            </div>
+            <div class="row d-flex justify-content-center mt-5">
+                <rating class="col-4" description="Оценка" rating="0"></rating>
+            </div>
+            <div class="row d-flex justify-content-center mt-5">
+                <input class="col-4 review-form-header" name="header" type="text" placeholder="Заголовок"/>
+            </div>
+            <div class="row d-flex justify-content-center mt-5">
+                <textarea class="col-4 review-form-content" name="content"></textarea>
+            </div>
+            <div class="row d-flex justify-content-center mt-5">
+                <input type="submit" class="btn-primary" value="Отправить"/>
+            </div>
+        </div>
+    </form>
 </main>
 
 <footer>
