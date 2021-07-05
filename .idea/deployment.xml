@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" remoteFilesAllowedToDisappearOnAutoupload="false">
+    <serverData>
+      <paths name="api.punicapp.com">
+        <serverdata>
+          <mappings>
+            <mapping local="/var/www/api.becareful.online" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="becareful_backend">
+        <serverdata>
+          <mappings>
+            <mapping local="/var/www/api.becareful.online" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="megabonus-client">
+        <serverdata>
+          <mappings>
+            <mapping local="/var/www/api.becareful.online" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="megabonus-master">
+        <serverdata>
+          <mappings>
+            <mapping local="/var/www/api.becareful.online" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="megabonus.steelpages.info">
+        <serverdata>
+          <mappings>
+            <mapping local="/var/www/api.becareful.online" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>
